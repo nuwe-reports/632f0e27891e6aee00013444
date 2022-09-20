@@ -1,15 +1,11 @@
 import React from "react";
 import { useState } from "react";
-import { useAuth, useRequireAuth } from "../hooks/useAuth";
+import { useAuth } from "../hooks/useAuth";
 
 function Login() {
   const [user, setUser] = useState('');
   const [error, setError] = useState('');
-  const auth = useRequireAuth("/", true);
-
-  if (!auth) {
-    return <h1>Loading...</h1>;
-  }
+  const auth = useAuth()
 
   const handleSubmit = () => {
     if(!user) setError("Please introduce a username placeholder ⚠")

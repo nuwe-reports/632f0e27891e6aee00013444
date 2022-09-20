@@ -9,6 +9,4 @@ const AuthContextProvider = ({ children }) => {
 };
 
 
-
-
 export { AuthContextProvider, AuthContext };
