@@ -1,49 +1,33 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import { useGetCharacters } from "../hooks/useGetCharacters";
+import CharacterCard from "./CharacterCard";
+import { useFavourites } from "../hooks/useFavourites";
 
 function CharactersList() {
-  const charactersData = useGetCharacters();
-  const navigate = useNavigate()
-  const handleClick = (id)=> {
-    navigate(`/${id}`)
+  const {characters,setCharacters} = useGetCharacters();
+  const { favourites, toggleFavourite } = useFavourites();
+  const handleToggleFavourite = (char)=>{
+    console.log("tusa",char)
+    console.log("favourites",favourites)
+    toggleFavourite(char)
+    //Force to rerender to update changes and renderCharacters executes again
+    setCharacters({...characters})
   }
+
+  const renderCharacters = () => {
+    return characters.results.map((char) => {
+      if (favourites.find((fav) => fav.id === char.id)) {
+        return <CharacterCard key={char.id} handleToggle={(id)=>handleToggleFavourite(id)} char={char} isFavourite />;
+      }
+      return <CharacterCard key={char.id} handleToggle={(id)=>handleToggleFavourite(id)} char={char} />;
+    });
+  };
+
   return (
     <section>
       <h1>Characters List</h1>
       <div className="charactersList  flex gap-2 justify-center flex-wrap">
-        {charactersData &&
-          charactersData.results &&
-          charactersData.results.map((char) => {
-            const charStatus =
-              char.status === "Alive"
-                ? "text-green-600"
-                : char.status === "Dead"
-                ? "text-red-600"
-                : "";
-            return (
-              <div
-                onClick={()=>handleClick(char.id)}
-                className="character bg-blue-300 rounded-lg p-4 flex"
-                key={char.id}
-              >
-                <div className="imageWrapper">
-                  <img className="w-full h-full" src={char.image}></img>
-                </div>
-                <div className="contentWrapper flex flex-col items-start p-2">
-                  <h3>{char.name}</h3>
-                  <p>
-                    <strong>Status: </strong>
-                    <span className={charStatus}>{char.status}</span>
-                  </p>
-                  <p>
-                    <strong>Last know location: </strong>
-                    <span>{char.location.name}</span>
-                  </p>
-                </div>
-              </div>
-            );
-          })}
+        {characters && characters.results && renderCharacters()}
       </div>
     </section>
   );

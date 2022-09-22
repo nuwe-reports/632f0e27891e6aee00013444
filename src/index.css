@@ -662,8 +662,8 @@ a:is([aria-current], :hover, :active, :focus) {
   --color: var(--primary-hover);
   --text-decoration: underline;
 }
-[role="link"]:focus,
-a:focus {
+[role="link"]:focus-visible,
+a:focus-visible {
   --background-color: var(--primary-focus);
 }
 [role="link"].secondary,
@@ -884,11 +884,11 @@ input[type="submit"]:is([aria-current], :hover, :active, :focus) {
   --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
   --color: var(--primary-inverse);
 }
-[role="button"]:focus,
-button:focus,
-input[type="button"]:focus,
-input[type="reset"]:focus,
-input[type="submit"]:focus {
+[role="button"]:focus-visible,
+button:focus-visible,
+input[type="button"]:focus-visible,
+input[type="reset"]:focus-visible,
+input[type="submit"]:focus-visible {
   --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
     0 0 0 var(--outline-width) var(--primary-focus);
 }
@@ -1968,7 +1968,7 @@ nav :where(a, [role="link"]) {
   border-radius: var(--border-radius);
   text-decoration: none;
 }
-nav :where(a, [role="link"]):is([aria-current], :hover, :active, :focus) {
+nav :where(a, [role="link"]):is([aria-current], :hover, :active, :focus-visible) {
   text-decoration: none;
 }
 nav[aria-label="breadcrumb"] {
