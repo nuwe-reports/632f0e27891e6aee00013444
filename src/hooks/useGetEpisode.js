@@ -11,7 +11,7 @@ const useGetEpisode = (url) => {
         setEpisode(serializedData);
       })();
     } catch (error) {
-      console.log("ERROR", error);
+      alert("There was an error while fetching the data...")
     }
   }, [url]);
   return episode;

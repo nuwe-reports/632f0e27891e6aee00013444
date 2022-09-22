@@ -4,14 +4,10 @@ import CharacterCard from "./CharacterCard";
 import { useFavourites } from "../hooks/useFavourites";
 
 function CharactersList() {
-  const {characters,setCharacters} = useGetCharacters();
+  const characters = useGetCharacters();
   const { favourites, toggleFavourite } = useFavourites();
   const handleToggleFavourite = (char)=>{
-    console.log("tusa",char)
-    console.log("favourites",favourites)
     toggleFavourite(char)
-    //Force to rerender to update changes and renderCharacters executes again
-    setCharacters({...characters})
   }
 
   const renderCharacters = () => {

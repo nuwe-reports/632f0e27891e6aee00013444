@@ -10,7 +10,7 @@ const useGetCharacters = () => {
       setCharacters(serializedData);
     })();
   }, []);
-  return {characters,setCharacters};
+  return characters;
 };
 
 export { useGetCharacters };

@@ -7,7 +7,6 @@ function CharacterDetail() {
   const { id } = useParams();
   const char = useGetCharactersDetails(id);
   const episode = useGetEpisode(char?.episode[0])
-  console.log(char)
   return (
     <section>
       <h1>Character Details</h1>
