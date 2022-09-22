@@ -4,6 +4,9 @@
   text-align: center;
 }
 
+section:has(.characterDetails){
+  margin: 0;
+}
 
 section:has(.charactersList){
   margin: 50px 0px 100px;
@@ -36,4 +39,5 @@ section:has(.charactersList){
     margin: 0;
   }
 }
+
 

@@ -5,7 +5,7 @@ import LikeIcon from "../icons/Like";
 function CharacterCard({ char, isFavourite, handleToggle }) {
   const navigate = useNavigate();
   const handleClick = (id) => {
-    navigate(`/${id}`);
+    navigate(`/characters/${id}`);
   };
 
   const handleToggleFav = (e) => {
@@ -24,7 +24,7 @@ function CharacterCard({ char, isFavourite, handleToggle }) {
       {char && (
         <div
           onClick={() => handleClick(char.id)}
-          className="character bg-blue-300 rounded-lg p-4 flex"
+          className="character flex-col sm:flex-row h-auto bg-blue-300 rounded-lg p-4 flex"
           key={char.id}
         >
           <div className="imageWrapper">

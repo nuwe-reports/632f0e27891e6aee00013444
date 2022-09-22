@@ -9,7 +9,11 @@ function Layout({ children }) {
     <>
       <header className="flex flex-col">
         <nav className="items-center bg-blue-300 p-2 rounded">
-          <Link to="/">Home</Link>
+          <div className="flex gap-2">
+            <Link to="/characters">Home</Link>
+            <Link to="/favs">Favourites</Link>
+            <Link to="/404-page">404</Link>
+          </div>
           {auth.user && (
             <>
               <div>

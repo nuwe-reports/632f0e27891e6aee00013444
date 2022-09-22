@@ -9,6 +9,8 @@ import Login from "./components/Login";
 import Layout from "./components/Layout";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import AnonRoute from "./routes/AnonRoute";
+import FavouritesList from "./components/FavouritesList";
+import Page404 from "./components/404";
 
 function App() {
   return (
@@ -16,16 +18,14 @@ function App() {
       <Routes>
         <Route element={<ProtectedRoute />}>
           <Route path="/" element={<CharactersList />} />
-          <Route path="/:id" element={<CharacterDetail />} />
+          <Route path="/characters" element={<CharactersList />} />
+          <Route path="/characters/:id" element={<CharacterDetail />} />
+          <Route path="/favs" element={<FavouritesList />} />
         </Route>
-        <Route
-          path="/login"
-          element={
-            <AnonRoute>
-              <Login />
-            </AnonRoute>
-          }
-        />
+        <Route element={<AnonRoute />}>
+          <Route path="/login" element={<Login />} />
+        </Route>
+        <Route path="*" element={<Page404 />} />
       </Routes>
     </Layout>
   );
