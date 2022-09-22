@@ -1,0 +1,38 @@
+#root {
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+section:has(.charactersList){
+  margin: 50px 0px 100px;
+}
+
+
+.charactersList {
+  max-width: 1920px;
+  margin: 0 auto;
+  &:has(.character:hover) .character:not(:hover){
+    transform: scale(.9);
+    opacity: .7;
+  }
+}
+
+.imageWrapper {
+  flex: 2 1 0%;
+}
+
+.contentWrapper {
+  flex: 3 1 0%;
+}
+
+.character {
+  text-align: left;
+  width: 600px;
+  height: 220px;
+  transition: transform 300ms ease, opacity 300ms linear ;
+  h3,p{
+    margin: 0;
+  }
+}
+

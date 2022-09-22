@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import reactLogo from "./assets/react.svg";
-import "./App.css";
+import "./App.scss";
 import { Routes, Route } from "react-router-dom";
 import CharactersList from "./components/CharactersList";
 import CharacterDetail from "./components/CharacterDetail";
