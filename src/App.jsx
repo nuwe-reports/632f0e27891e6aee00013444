@@ -16,8 +16,8 @@ function App() {
       <Routes>
         <Route element={<ProtectedRoute />}>
           <Route path="/" element={<CharactersList />} />
+          <Route path="/:id" element={<CharacterDetail />} />
         </Route>
-        <Route path="/:id" element={<CharacterDetail />} />
         <Route
           path="/login"
           element={

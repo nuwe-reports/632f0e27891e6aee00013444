@@ -8,22 +8,25 @@ function Layout({ children }) {
   return (
     <>
       <header className="flex flex-col">
-        {auth.user && (
-          <>
-            <nav className="items-center bg-blue-300 p-2 rounded">
-              <Link to="/">Home</Link>
+        <nav className="items-center bg-blue-300 p-2 rounded">
+          <Link to="/">Home</Link>
+          {auth.user && (
+            <>
               <div>
                 <strong>Welcome</strong>
                 <span className="text-blue-500 text-xl"> {auth.user}</span>
               </div>
               <span>
-                <button className="m-0 bg-inherit border-none" onClick={() => auth.logout()}>
+                <button
+                  className="m-0 bg-inherit border-none"
+                  onClick={() => auth.logout()}
+                >
                   <img src={logout}></img>
                 </button>
               </span>
-            </nav>
-          </>
-        )}
+            </>
+          )}
+        </nav>
       </header>
       {children}
     </>

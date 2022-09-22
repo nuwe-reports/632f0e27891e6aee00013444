@@ -13,7 +13,7 @@ function Login() {
   }
 
   return (
-    <div>
+    <div className="w-1/2 m-auto">
       <h1 >Login Form</h1>
       <label>Username</label>
       <input onChange={(e) => setUser(e.target.value)} type={"text"} />
