@@ -3,6 +3,8 @@ import { useState } from "react";
 const useProvideFavourites = () => {
   const [favourites, setFavourites] = useState([]);
 
+  const checkIsFavourite = (char) => favourites.find((fav) => fav.id === char.id);
+
   const toggleFavourite = (char) => {
     const selectedFavourite = favourites.find((fav) => fav.id === char.id);
     if (!selectedFavourite) {
@@ -17,6 +19,7 @@ const useProvideFavourites = () => {
   return {
     favourites,
     toggleFavourite,
+    checkIsFavourite
   };
 };
 

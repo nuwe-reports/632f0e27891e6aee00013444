@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useState } from "react";
 
 const useGetEpisode = (url) => {
   const [episode, setEpisode] = useState();

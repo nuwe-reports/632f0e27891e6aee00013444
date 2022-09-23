@@ -1,16 +1,18 @@
 import { useNavigate } from "react-router-dom";
 import React from "react";
 import LikeIcon from "../icons/Like";
+import { useFavourites } from "../hooks/useFavourites";
 
-function CharacterCard({ char, isFavourite, handleToggle }) {
+function CharacterCard({ char }) {
   const navigate = useNavigate();
+  const {checkIsFavourite, toggleFavourite} = useFavourites()
   const handleClick = (id) => {
     navigate(`/characters/${id}`);
   };
 
   const handleToggleFav = (e) => {
     e.stopPropagation();
-    handleToggle(char);
+    toggleFavourite(char);
   };
 
   const charStatusClassName =
@@ -37,7 +39,7 @@ function CharacterCard({ char, isFavourite, handleToggle }) {
                 className="w-min bg-inherit border-none m-0"
                 onClick={handleToggleFav}
               >
-                <LikeIcon isActive={isFavourite} />
+                <LikeIcon isActive={checkIsFavourite(char)} />
               </button>
             </div>
             <p>

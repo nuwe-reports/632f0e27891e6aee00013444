@@ -5,17 +5,21 @@ import { useFavourites } from "../hooks/useFavourites";
 
 function CharactersList() {
   const characters = useGetCharacters();
-  const { favourites, toggleFavourite } = useFavourites();
-  const handleToggleFavourite = (char)=>{
-    toggleFavourite(char)
-  }
+  // const { favourites, toggleFavourite } = useFavourites();
+  // const handleToggleFavourite = (char)=>{
+  //   toggleFavourite(char)
+  // }
 
   const renderCharacters = () => {
+    console.log("Tusa")
+    // return characters.results.map((char) => {
+    //   if (favourites.find((fav) => fav.id === char.id)) {
+    //     return <CharacterCard key={char.id} handleToggle={(id)=>handleToggleFavourite(id)} char={char} isFavourite />;
+    //   }
+    //   return <CharacterCard key={char.id} handleToggle={(id)=>handleToggleFavourite(id)} char={char} />;
+    // });
     return characters.results.map((char) => {
-      if (favourites.find((fav) => fav.id === char.id)) {
-        return <CharacterCard key={char.id} handleToggle={(id)=>handleToggleFavourite(id)} char={char} isFavourite />;
-      }
-      return <CharacterCard key={char.id} handleToggle={(id)=>handleToggleFavourite(id)} char={char} />;
+      return <CharacterCard key={char.id} char={char} />;
     });
   };
 
