@@ -1,5 +1,4 @@
 import React from "react";
-import { useMemo } from "react";
 import { useParams } from "react-router-dom";
 import { useFavourites } from "../hooks/useFavourites";
 import { useGetCharactersDetails } from "../hooks/useGetCharacterDetails";
