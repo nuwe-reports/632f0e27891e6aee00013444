@@ -5,7 +5,6 @@ import CharacterCard from "./CharacterCard";
 
 function FavouritesList() {
   const { favourites, toggleFavourite } = useFavourites();
-  console.log(favourites);
   const handleToggleFavourite = (char) => {
     toggleFavourite(char);
   };
