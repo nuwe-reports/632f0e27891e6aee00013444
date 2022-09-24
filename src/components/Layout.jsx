@@ -8,7 +8,7 @@ function Layout({ children }) {
   return (
     <>
       <header className="flex flex-col">
-        <nav className="items-center bg-blue-300 p-2 rounded">
+        <nav className="items-center h-16 bg-blue-300 p-2 rounded">
           <div className="flex gap-2">
             <Link to="/characters">Home</Link>
             <Link to="/favs">Favourites</Link>
