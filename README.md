@@ -29,6 +29,13 @@
   </ol>
 </details>
 
+## Demo:
+
+*Powered by* 	![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
+
+<a href="https://challenge-frontentd-rick-morty.vercel.app/">Rick and Morty Challenge</a>
+
+
 ## About The Challenge
 
 This is a repository for the <a href="https://nuwe.io/dev/challenges/talent-squad-frontend-ii">Talent Squad Frontend Challenge</a>
